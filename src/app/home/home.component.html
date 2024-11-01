@@ -1,0 +1,67 @@
+
+
+
+<div class="container py-5">
+<div class="row py-4">
+
+    <div class="col-md-6 py-4">
+        <div class="brdr w-25 my-3"></div>
+        <h2 class="my3">Trending trending Movies <br> To watch Now</h2>
+        <p >most watched movies by days</p>
+        <div class="brdr w-100 my-3"></div>
+    </div>
+
+    <div *ngFor="let movie of trendingMovies , let i = index " class="col-md-2"  >
+        <div class="movie position-relative" >
+            <a [routerLink]="['/Moviedetails',movie.id ]" >
+                <img [src]="imgPrefix+movie.poster_path"  class="w-100 mb-3">
+                <h3 class="h6 ">{{movie.title}}</h3>
+                <div class="vote bg-lights p-2 position-absolute top-0 end-0 ">{{movie.vote_average}}</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="m-auto w-75 my-4 the-line"></div>
+
+<div class="row py-4">
+
+    <div class="col-md-6 py-4">
+        <div class="brdr w-25 my-3"></div>
+        <h2 class="my3">Trending trending TV show  <br> To watch Now</h2>
+        <p >most watched TV show by days</p>
+        <div class="brdr w-100 my-3"></div>
+    </div>
+
+    <div *ngFor="let tvShow of trendingTv " class="col-md-2">
+        <div class="movie position-relative">
+            <img [src]="imgPrefix+tvShow.poster_path" class="w-100 mb-3">
+            <h3 class="h6 ">{{tvShow.name}}</h3>
+            <div class="vote bg-lights p-2 position-absolute top-0 end-0 ">{{tvShow.vote_average}}</div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+<div class="m-auto w-75 my-4 the-line"></div>
+
+<div class="row py-4">
+
+    <div class="col-md-4 py-4">
+        <div class="brdr w-25 my-3"></div>
+        <h2 class="my3">Trending trending Person</h2>
+        <div class="brdr w-100 my-3"></div>
+    </div>
+
+    <div *ngFor="let person of trendingPerson " class="col-md-2">
+        <div class="movie position-relative">
+            <img [src]="imgPrefix+person.profile_path" class="w-100">
+            <h3 class="h6 ">{{person.name}}</h3>
+            <div class="vote bg-lights p-2 position-absolute top-0 end-0 ">{{person.vote_average}}</div>
+        </div>
+    </div>
+</div> -->
+
+</div>
